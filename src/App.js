@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './components/header';
+import Input from './components/input';
+import Profile from './components/profile';
+import Tmp from './components/tmp';
+import data from './data.json';
+import { Route } from "react-router-dom";
 function App() {
+  //let str=[];
+  //for(let i=0; i<data.length; i++){
+  //  str.push(<Card title={data[i].title} buttonName={data[i].buttonText} downloadLink={data[i].link} />);
+  //}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Route exact path="/">
+        <Input />
+      </Route>
+      <Route path="/profile">
+        <Profile />
+      </Route>
     </div>
   );
 }
