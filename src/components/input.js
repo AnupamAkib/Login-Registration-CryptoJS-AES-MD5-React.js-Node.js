@@ -43,7 +43,7 @@ export default function Input() {
             })
             .catch((error) => {
                 setFoundFlag(false);
-                //console.error(error)
+                console.error(error)
                 console.log("not found")
             })
     }
@@ -61,9 +61,9 @@ export default function Input() {
                 <title>Search CF Handle</title>
                 <img src={logo} width="250" /><br /><br />
                 <form onSubmit={getHandle}>
-                    <input type="text" idName="handle" className="form-control" placeholder="Enter your CodeForces handle" value={cfHandle} onChange={handleChange} />
+                    <input type="text" className="form-control" placeholder="Enter your CodeForces handle" value={cfHandle} onChange={handleChange} />
                     <font color={foundFlag ? 'green' : 'red'}>{foundFlag ? 'Profile found' : cfHandle.length ? 'Profile not found' : 'Enter a handle'}</font><br /><br />
-                    <button onClick={getHandle} className="btn btn-primary btn-lg" disabled={foundFlag == true ? '' : 'true'}>Show Fetched Data</button>
+                    <button onClick={getHandle} className="btn btn-primary btn-lg" disabled={foundFlag == true ? '' : true}>Show Fetched Data</button>
                 </form>
             </div>
             <img src={picture} width="0" /><br />

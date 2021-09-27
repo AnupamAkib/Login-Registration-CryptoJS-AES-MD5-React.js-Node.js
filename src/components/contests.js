@@ -21,14 +21,14 @@ function Contests(props) {
     }, [])
     let arr = []
     for (let i in data.result) {
-        arr.push(<ContestCard id={data.result[i].contestId} round={data.result[i].contestName} OldRating={data.result[i].oldRating} NewRating={data.result[i].newRating} rank={data.result[i].rank} />)
+        arr.push(<ContestCard key={data.result[i].contestId} id={data.result[i].contestId} round={data.result[i].contestName} OldRating={data.result[i].oldRating} NewRating={data.result[i].newRating} rank={data.result[i].rank} />)
     }
     arr.reverse();
     if (isLoading) {
         return (
             <div>
                 <br />
-                <div class="spinner-border text-primary"></div><br />
+                <div className="spinner-border text-primary"></div><br />
                 Please Wait
             </div>
         )
