@@ -1,8 +1,8 @@
 import Header from './components/header';
-import Input from './components/input';
-import Profile from './components/profile';
-import Tmp from './components/tmp';
-import data from './data.json';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import Dashboard from './components/Dashboard/Dashboard';
+
 import { Route } from "react-router-dom";
 function App() {
   //let str=[];
@@ -12,11 +12,14 @@ function App() {
   return (
     <div>
       <Header />
-      <Route exact path="/">
-        <Input />
+      <Route path="/login">
+        <Login />
       </Route>
-      <Route path="/profile">
-        <Profile />
+      <Route path="/sign_up">
+        <SignUp />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
       </Route>
     </div>
   );
